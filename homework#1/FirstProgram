@@ -1,0 +1,17 @@
+using system;
+
+class Program
+{
+    static void Main()
+    {
+        int L = 10;
+        float N = 3.14f;
+        string T = "Salsa de tomate";
+        bool B = true;
+
+        Console.WriteLine("L = " + L);
+        Console.WriteLine("N = " + N);
+        Console.WriteLine("T = " + T);
+        Console.WriteLine("B = " + B);
+    }
+}
