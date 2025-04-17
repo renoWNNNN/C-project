@@ -1,0 +1,6 @@
+@SPAKLY.API_HostAddress = http://localhost:5290
+
+GET {{SPAKLY.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
