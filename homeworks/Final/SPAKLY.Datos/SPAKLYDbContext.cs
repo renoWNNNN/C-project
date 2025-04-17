@@ -10,5 +10,7 @@ namespace SPAKLY.Datos
             : base(options) {}
 
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Productos> Productos { get; set; }
+        
     }
 }
