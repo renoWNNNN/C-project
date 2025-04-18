@@ -13,7 +13,7 @@ namespace SPAKLY.Datos
         public DbSet<Productos> Productos { get; set; }
 
         public DbSet<Pedido> Pedidos { get; set; }
-        public DbSet<DetallePedido> DetallesPedido { get; set; }
+        public DbSet<DetallePedido> DetallePedido { get; set; }
       
     }
 }

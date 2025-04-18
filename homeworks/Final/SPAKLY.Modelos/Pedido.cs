@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using SPAKLY.Modelos;
 
-namespace SPAKLY.API.Models
+namespace SPAKLY.Modelos
 {
     public class Pedido
     {
@@ -10,7 +10,7 @@ namespace SPAKLY.API.Models
         public DateTime Fecha { get; set; }
 
         public int ClienteID { get; set; }
-        public Cliente? Cliente { get; set; }
+        public Cliente Cliente { get; set; } = null!;
 
         public ICollection<DetallePedido> Detalles { get; set; } = new List<DetallePedido>();
     }
