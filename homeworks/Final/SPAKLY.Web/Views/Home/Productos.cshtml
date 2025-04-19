@@ -1,0 +1,32 @@
+@model IEnumerable<SPAKLY.Modelos.Productos>
+
+<h2>Listado de Productos</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var producto in Model)
+        {
+            <tr>
+                <td>@producto.Nombre</td>
+                <td>@producto.Descripcion</td>
+                <td>@producto.Precio.ToString("C")</td>
+                <td>@producto.Stock</td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr><td colspan="4">No hay productos disponibles.</td></tr>
+    }
+    </tbody>
+</table>
