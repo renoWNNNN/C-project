@@ -2,6 +2,13 @@
 
 <h2>Listado de Productos</h2>
 
+<form asp-action="Productos" method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="searchString" class="form-control" placeholder="Buscar por nombre..." />
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -9,6 +16,7 @@
             <th>Descripción</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -21,12 +29,16 @@
                 <td>@producto.Descripcion</td>
                 <td>@producto.Precio.ToString("C")</td>
                 <td>@producto.Stock</td>
+                <td>
+                    <a asp-controller="Productos" asp-action="Editar" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-controller="Productos" asp-action="Eliminar" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
             </tr>
         }
     }
     else
     {
-        <tr><td colspan="4">No hay productos disponibles.</td></tr>
+        <tr><td colspan="5">No hay productos disponibles.</td></tr>
     }
     </tbody>
 </table>
