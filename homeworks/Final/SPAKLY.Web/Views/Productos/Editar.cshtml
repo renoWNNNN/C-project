@@ -8,6 +8,10 @@
 
 <form asp-action="Editar" method="post">
     <div class="form-group">
+        <label for="ProductosId">ID Producto</label>
+        <input type="text" id="ProductosId" name="ProductosId" class="form-control" value="@Model.ProductosId" readonly />
+    </div>
+    <div class="form-group">
         <label for="Nombre">Nombre</label>
         <input type="text" id="Nombre" name="Nombre" class="form-control" value="@Model.Nombre" required />
     </div>

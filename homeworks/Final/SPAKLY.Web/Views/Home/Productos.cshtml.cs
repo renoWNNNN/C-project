@@ -12,26 +12,23 @@ namespace SPAKLY.Web.Views.Home
         {
             string connectionString = "Server=localhost;Database=SpaklyDb;Trusted_Connection=True;Encrypt=False;";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using SqlConnection connection = new(connectionString);
+            connection.Open();
+            string query = "SELECT * FROM Productos";
+
+            using SqlCommand command = new(query, connection);
+            using SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
             {
-                connection.Open();
-                string query = "SELECT * FROM Productos";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                using (SqlDataReader reader = command.ExecuteReader())
+                Productos.Add(new Productos
                 {
-                    while (reader.Read())
-                    {
-                        Productos.Add(new Productos
-                    {
-                       Nombre = reader["Nombre"].ToString(),
-                       Descripcion = reader["Descripcion"].ToString(),
-                       Precio = (decimal)reader["Precio"],
-                       Stock = (int)reader["Stock"]
-                    });
+                    ProductosId = reader.GetInt32(0),
+                    Nombre = reader["Nombre"]?.ToString() ?? string.Empty,
+                    Descripcion = reader["Descripcion"]?.ToString() ?? string.Empty,
+                    Precio = (decimal)reader["Precio"],
+                    Stock = (int)reader["Stock"]
+                });
 
-                    }
-                }
             }
         }
     }
