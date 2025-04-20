@@ -18,7 +18,6 @@
   <ItemGroup>
     <ProjectReference Include="..\SPAKLY.Modelos\SPAKLY.Modelos.csproj" />
     <ProjectReference Include="..\SPAKLY.Datos\SPAKLY.Datos.csproj" />
-    <ProjectReference Include="..\SPAKLY.Negocio\SPAKLY.Negocio.csproj" />
   </ItemGroup>
 
 </Project>

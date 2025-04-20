@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using SPAKLY.Datos;
-using SPAKLY.Modelos;
 using Microsoft.EntityFrameworkCore;
+using SPAKLY.Modelos;
+
 
 namespace SPAKLY.API.Controllers
 {
@@ -17,13 +18,13 @@ namespace SPAKLY.API.Controllers
         }
         
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
+        public async Task<ActionResult<IEnumerable<Clientes>>> GetClientes()
         {
             return await _context.Clientes.ToListAsync();
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Cliente>> GetCliente(int id)
+        public async Task<ActionResult<Clientes>> GetCliente(int id)
         {
             var cliente = await _context.Clientes.FindAsync(id);
             if (cliente == null)
@@ -33,7 +34,7 @@ namespace SPAKLY.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
+        public async Task<ActionResult<Clientes>> PostCliente(Clientes cliente)
         {
             _context.Clientes.Add(cliente);
             await _context.SaveChangesAsync();
@@ -42,7 +43,7 @@ namespace SPAKLY.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCliente(int id, Cliente cliente)
+        public async Task<IActionResult> PutCliente(int id, Clientes cliente)
         {
             if (id != cliente.ClienteID)
                 return BadRequest();
