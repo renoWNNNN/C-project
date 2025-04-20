@@ -11,7 +11,7 @@ namespace SPAKLY.Modelos
         public int Cantidad { get; set; }
         public decimal PrecioUnitario { get; set; }
 
-        public Pedido Pedido { get; set; } = null!;
+        public Ordenes Ordenes { get; set; } = null!;
         public Productos Producto { get; set; } = null!;
     }
 }

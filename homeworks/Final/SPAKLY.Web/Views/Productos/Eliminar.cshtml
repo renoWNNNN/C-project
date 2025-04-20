@@ -1,0 +1,20 @@
+@model SPAKLY.Modelos.Productos
+
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+
+<h3 class="text-danger">¿Estás seguro de que deseas eliminar este producto?</h3>
+
+<div class="mb-3">
+    <strong>Nombre:</strong> @Model.Nombre <br />
+    <strong>Descripción:</strong> @Model.Descripcion <br />
+    <strong>Precio:</strong> $@Model.Precio <br />
+    <strong>Stock:</strong> @Model.Stock
+</div>
+
+<form asp-action="Eliminar" method="post">
+    <input type="hidden" asp-for="ProductosId" />
+    <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+    <a asp-action="Productos" asp-controller="Home" class="btn btn-secondary">Cancelar</a>
+</form>

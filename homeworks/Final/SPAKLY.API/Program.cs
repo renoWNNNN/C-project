@@ -12,6 +12,7 @@ builder.Services.AddDbContext<SPAKLYDbContext>(options =>
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
