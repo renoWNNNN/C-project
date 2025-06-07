@@ -1,0 +1,10 @@
+public class MiembroDeLaComunidad
+{
+    public string Nombre { get; set; }
+    public string ID { get; set; }
+
+    public virtual void MostrarInformacion()
+    {
+        Console.WriteLine($"Nombre: {Nombre}, ID: {ID}");
+    }
+}
