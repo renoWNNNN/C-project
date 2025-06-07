@@ -19,3 +19,51 @@ public class Estudiante : MiembroDeLaComunidad
         Console.WriteLine($"Carrera: {Carrera}");
     }
 }
+public class ExAlumno : MiembroDeLaComunidad
+{
+    public int AñoGraduacion { get; set; }
+
+    public override void MostrarInformacion()
+    {
+        base.MostrarInformacion();
+        Console.WriteLine($"Año de Graduación: {AñoGraduacion}");
+    }
+}
+public class Empleado : MiembroDeLaComunidad
+{
+    public string Departamento { get; set; }
+}
+public class Administrativo : Empleado
+{
+    public string Cargo { get; set; }
+
+    public override void MostrarInformacion()
+    {
+        base.MostrarInformacion();
+        Console.WriteLine($"Cargo: {Cargo}");
+    }
+}
+public class Docente : Empleado
+{
+    public string Area { get; set; }
+}
+public class Administrador : Docente
+{
+    public string NivelAcceso { get; set; }
+
+    public override void MostrarInformacion()
+    {
+        base.MostrarInformacion();
+        Console.WriteLine($"Nivel de Acceso: {NivelAcceso}");
+    }
+}
+public class Maestro : Docente
+{
+    public string Materia { get; set; }
+
+    public override void MostrarInformacion()
+    {
+        base.MostrarInformacion();
+        Console.WriteLine($"Materia: {Materia}");
+    }
+}
