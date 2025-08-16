@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inkTHINK.Domain", "inkTHINK.Domain\inkTHINK.Domain.csproj", "{4BD48D7E-C28F-482F-9378-29A0DAEEC4CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inkTHINK.Application", "inkTHINK.Application\inkTHINK.Application.csproj", "{A0039011-8844-4FAA-A1BF-102DCE567BB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inkTHINK.Infrastructure", "inkTHINK.Infrastructure\inkTHINK.Infrastructure.csproj", "{BFF8F914-62CC-4446-899E-A4AE5C20142C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inkTHINK.API", "inkTHINK.API\inkTHINK.API.csproj", "{6E855D58-580C-46F1-88D3-BAC672328774}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inkTHINK.Web", "inkTHINK.Web\inkTHINK.Web.csproj", "{115243FE-13F9-4607-A6C0-F4D5E76E6081}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BD48D7E-C28F-482F-9378-29A0DAEEC4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD48D7E-C28F-482F-9378-29A0DAEEC4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD48D7E-C28F-482F-9378-29A0DAEEC4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD48D7E-C28F-482F-9378-29A0DAEEC4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0039011-8844-4FAA-A1BF-102DCE567BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0039011-8844-4FAA-A1BF-102DCE567BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0039011-8844-4FAA-A1BF-102DCE567BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0039011-8844-4FAA-A1BF-102DCE567BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF8F914-62CC-4446-899E-A4AE5C20142C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF8F914-62CC-4446-899E-A4AE5C20142C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF8F914-62CC-4446-899E-A4AE5C20142C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF8F914-62CC-4446-899E-A4AE5C20142C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E855D58-580C-46F1-88D3-BAC672328774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E855D58-580C-46F1-88D3-BAC672328774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E855D58-580C-46F1-88D3-BAC672328774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E855D58-580C-46F1-88D3-BAC672328774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{115243FE-13F9-4607-A6C0-F4D5E76E6081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115243FE-13F9-4607-A6C0-F4D5E76E6081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115243FE-13F9-4607-A6C0-F4D5E76E6081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115243FE-13F9-4607-A6C0-F4D5E76E6081}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

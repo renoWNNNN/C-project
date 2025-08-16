@@ -1,0 +1,6 @@
+@inkTHINK.API_HostAddress = http://localhost:5062
+
+GET {{inkTHINK.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

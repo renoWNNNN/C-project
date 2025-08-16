@@ -1,0 +1,22 @@
+@model List<TaxRule>
+@using inkTHINK.Domain.Entities
+
+
+<h1>Reglas de impuestos</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Version</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var rule in Model)
+    {
+        <tr>
+            <td>@rule.Tipo</td>
+            <td>@rule.Version</td>
+        </tr>
+    }
+    </tbody>
+</table>
