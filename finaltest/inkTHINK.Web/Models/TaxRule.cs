@@ -6,5 +6,7 @@ namespace inkTHINK.Web.Models
         public string Nombre { get; set; } = string.Empty;
         public decimal Porcentaje { get; set; }
         public string Descripcion { get; set; } = string.Empty;
+
+        public string Tipo { get; set; } = string.Empty;
     }
 }

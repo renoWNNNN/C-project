@@ -10,4 +10,8 @@ public class Calculo
     public string RequestSnapshot { get; set; } = "{}";
     public string ResultSnapshot { get; set; } = "{}";
     public string ReglasVersionadas { get; set; } = "{}";
+    public decimal Monto { get; set; }
+    public decimal ImpuestoCalculado { get; set; }
+
+    public string DetalleImpuestosJson { get; set; } = "{}";
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using inkTHINK.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using inkTHINK.Infrastructure.Data;
 namespace inkTHINK.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250817201322_Inicial")]
+    partial class Inicial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,18 +36,8 @@ namespace inkTHINK.Infrastructure.Migrations
                     b.Property<int?>("ContribuyenteId")
                         .HasColumnType("int");
 
-                    b.Property<string>("DetalleImpuestosJson")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
-
-                    b.Property<decimal>("ImpuestoCalculado")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Monto")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ReglasVersionadas")
                         .IsRequired()

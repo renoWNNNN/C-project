@@ -9,7 +9,7 @@ namespace inkTHINK.Infrastructure.Data
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
 
-            optionsBuilder.UseSqlServer("Server=.;Database=inkTHINKDB;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=inkTHINKDB;Trusted_Connection=True;TrustServerCertificate=True;");
 
             return new AppDbContext(optionsBuilder.Options);
         }
