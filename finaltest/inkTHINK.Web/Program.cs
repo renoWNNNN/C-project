@@ -1,9 +1,16 @@
+using inkTHINK.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient<TaxRuleService>();
+builder.Services.AddScoped<ITaxService, TaxService>();
 
+// Registrar DbContext
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
@@ -11,7 +18,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -27,3 +33,22 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+public class TaxService : ITaxService
+{
+    public object CalculateIncomeTax(decimal amount)
+    {
+        throw new NotImplementedException();
+    }
+
+    public object CalculateITBIS(decimal amount)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public interface ITaxService
+{
+    object CalculateIncomeTax(decimal amount);
+    object CalculateITBIS(decimal amount);
+}

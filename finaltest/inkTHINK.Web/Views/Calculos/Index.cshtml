@@ -1,0 +1,25 @@
+@model IEnumerable<inkTHINK.Domain.Entities.Calculo>
+
+<h1>Cálculos Realizados</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Contribuyente</th>
+            <th>Fecha</th>
+            <th>Resultado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var calc in Model)
+        {
+            <tr>
+                <td>@calc.Id</td>
+                <td>@calc.ContribuyenteId</td>
+                <td>@calc.Fecha.ToString("dd/MM/yyyy")</td>
+                <td>@calc.ResultSnapshot</td>
+            </tr>
+        }
+    </tbody>
+</table>

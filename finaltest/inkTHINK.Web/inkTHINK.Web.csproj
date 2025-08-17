@@ -2,6 +2,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\inkTHINK.Domain\inkTHINK.Domain.csproj" />
+    <ProjectReference Include="..\inkTHINK.Infrastructure\inkTHINK.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.8" />
   </ItemGroup>
 
   <PropertyGroup>

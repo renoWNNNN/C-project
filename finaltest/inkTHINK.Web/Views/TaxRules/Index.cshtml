@@ -1,22 +1,27 @@
-@model List<TaxRule>
-@using inkTHINK.Domain.Entities
+@model IEnumerable<inkTHINK.Domain.Entities.TaxRule>
 
+<h1>Reglas de Impuestos</h1>
 
-<h1>Reglas de impuestos</h1>
-<table>
+<table class="table table-bordered">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Tipo</th>
-            <th>Version</th>
+            <th>Versión</th>
+            <th>Vigente Desde</th>
+            <th>Vigente Hasta</th>
         </tr>
     </thead>
     <tbody>
-    @foreach (var rule in Model)
-    {
-        <tr>
-            <td>@rule.Tipo</td>
-            <td>@rule.Version</td>
-        </tr>
-    }
+        @foreach (var rule in Model)
+        {
+            <tr>
+                <td>@rule.Id</td>
+                <td>@rule.Tipo</td>
+                <td>@rule.Version</td>
+                <td>@rule.VigenteDesde.ToShortDateString()</td>
+                <td>@rule.VigenteHasta?.ToShortDateString()</td>
+            </tr>
+        }
     </tbody>
 </table>

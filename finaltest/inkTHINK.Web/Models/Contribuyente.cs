@@ -1,14 +1,10 @@
-namespace inkTHINK.Domain.Entities
+namespace inkTHINK.Web.Models
 {
     public class Contribuyente
     {
         public int Id { get; set; }
-
         public string Nombre { get; set; } = string.Empty;
-        public string RncCedula { get; set; } = string.Empty;
-
+        public string Identificacion { get; set; } = string.Empty;
         public string Direccion { get; set; } = string.Empty;
-
-        public string Tipo { get; set; } = string.Empty;
     }
 }

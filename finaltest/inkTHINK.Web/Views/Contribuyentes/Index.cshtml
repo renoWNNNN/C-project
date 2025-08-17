@@ -1,0 +1,25 @@
+@model IEnumerable<inkTHINK.Domain.Entities.Contribuyente>
+
+<h1>Contribuyentes</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>RNC o Cédula</th>
+            <th>Tipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Id</td>
+                <td>@c.Nombre</td>
+                <td>@c.RncCedula</td>
+                <td>@c.Tipo</td>
+            </tr>
+        }
+    </tbody>
+</table>

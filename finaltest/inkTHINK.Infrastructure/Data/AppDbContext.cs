@@ -10,14 +10,6 @@ public class AppDbContext : DbContext
     public DbSet<Contribuyente> Contribuyentes => Set<Contribuyente>();
     public DbSet<TaxRule> TaxRules => Set<TaxRule>();
     public DbSet<Calculo> Calculos => Set<Calculo>();
-
-   // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//{
-  //  optionsBuilder.UseSqlServer(
-    //    "Server=localhost;Database=inkTHINKDB;Trusted_Connection=True;TrustServerCertificate=True;"
-    //);
-//}
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<TaxRule>().Property(x => x.ParamsJson).HasColumnType("TEXT");

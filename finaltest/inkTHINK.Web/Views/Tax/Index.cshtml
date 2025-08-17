@@ -1,0 +1,22 @@
+@model inkTHINK.Web.Models.TaxCalculation
+
+<h1>Calculadora de Impuestos Básicos</h1>
+
+<h2>Calcular ITBIS</h2>
+<form asp-action="CalculateITBIS" method="post">
+    <input type="number" name="amount" placeholder="Monto" step="0.01" required />
+    <button type="submit">Calcular ITBIS</button>
+</form>
+
+<h2>Calcular ISR</h2>
+<form asp-action="CalculateIncomeTax" method="post">
+    <input type="number" name="amount" placeholder="Monto" step="0.01" required />
+    <button type="submit">Calcular ISR</button>
+</form>
+
+@if (Model != null)
+{
+    <h3>@Model.Description</h3>
+    <p>Impuesto: @Model.TaxAmount.ToString("C")</p>
+    <p>Total: @Model.Total.ToString("C")</p>
+}

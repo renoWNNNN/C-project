@@ -1,17 +1,17 @@
 using Microsoft.AspNetCore.Mvc;
+using inkTHINK.Infrastructure.Data;
+using inkTHINK.Domain.Entities;
 
-public class TaxRulesController : Controller
+namespace inkTHINK.Web.Controllers
 {
-    private readonly TaxRuleService _service;
-
-    public TaxRulesController(TaxRuleService service)
+    public class TaxRulesController(AppDbContext context) : Controller
     {
-        _service = service;
-    }
+        private readonly AppDbContext _context = context;
 
-    public async Task<IActionResult> Index()
-    {
-        var rules = await _service.GetTaxRulesAsync();
-        return View(rules);
+        public IActionResult Index()
+        {
+            var rules = _context.TaxRules.ToList();
+            return View(rules);
+        }
     }
 }
