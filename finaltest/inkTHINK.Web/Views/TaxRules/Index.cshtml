@@ -1,71 +1,43 @@
 @model IEnumerable<inkTHINK.Domain.Entities.TaxRule>
 
-@{
-    ViewData["Title"] = "Reglas de Impuestos";
-}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold">Reglas de Impuestos</h2>
+    <a class="btn btn-success" href="/TaxRules/Create"><i class="fas fa-plus"></i> Nueva Regla</a>
+</div>
 
-<h2>Reglas de Impuestos</h2>
-
-<p>
-    <a asp-action="Create" class="btn btn-primary">Crear Nueva Regla</a>
-</p>
-
-<table class="table table-striped">
-    <thead>
+<table class="table table-hover table-striped align-middle">
+    <thead class="table-info">
         <tr>
             <th>Nombre</th>
             <th>Tipo</th>
             <th>Versión</th>
             <th>Porcentaje</th>
-            <th>Parámetros</th>
             <th>Vigente Desde</th>
             <th>Vigente Hasta</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Nombre</td>
-            <td>@item.Tipo</td>
-            <td>@item.Version</td>
-            <td>@item.Porcentaje %</td>
-            <td>
-                @{
-                    // Intentamos mostrar un resumen legible de ParamsJson
-                    string parametros = string.Empty;
-                    try
-                    {
-                        var dict = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(item.ParamsJson);
-                        if (dict != null && dict.Count > 0)
-                        {
-                            parametros = string.Join(", ", dict.Take(3).Select(kv => $"{kv.Key}: {kv.Value}"));
-                            if (dict.Count > 3)
-                            {
-                                parametros += ", ...";
-                            }
-                        }
-                        else
-                        {
-                            parametros = "Sin parámetros";
-                        }
-                    }
-                    catch
-                    {
-                        parametros = "JSON inválido";
-                    }
-                }
-                @parametros
-            </td>
-            <td>@item.VigenteDesde.ToShortDateString()</td>
-            <td>@(item.VigenteHasta?.ToShortDateString() ?? "Indefinido")</td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Eliminar</a>
-            </td>
-        </tr>
-    }
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Nombre</td>
+                <td>@r.Tipo</td>
+                <td>@r.Version</td>
+                <td>@r.Porcentaje %</td>
+                <td>@r.VigenteDesde.ToString("dd/MM/yyyy")</td>
+                <td>@(r.VigenteHasta?.ToString("dd/MM/yyyy") ?? "Indefinido")</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" href="/TaxRules/Edit/@r.Id"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-sm btn-danger" href="/TaxRules/Delete/@r.Id"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+@if (!Model.Any())
+{
+    <div class="alert alert-info" role="alert">
+        No hay reglas de impuestos definidas. <a href="/TaxRules/Create" class="alert-link">Crea una nueva regla</a>.
+    </div>
+}

@@ -1,35 +1,33 @@
 @model IEnumerable<inkTHINK.Domain.Entities.Contribuyente>
 
-@{
-    ViewData["Title"] = "Lista de Contribuyentes";
-}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold">Contribuyentes</h2>
+    <a class="btn btn-primary" href="/Contribuyentes/Create"><i class="fas fa-plus"></i> Nuevo Contribuyente</a>
+</div>
 
-<h2>@ViewData["Title"]</h2>
-
-<p>
-    <a asp-action="Create" class="btn btn-primary">➕ Nuevo Contribuyente</a>
-</p>
-
-<table class="table table-striped">
-    <thead>
+<table class="table table-hover table-striped align-middle">
+    <thead class="table-primary">
         <tr>
+            <th>ID</th>
             <th>Nombre</th>
-            <th>RNC / Cédula</th>
-            <th></th>
+            <th>Cedula / RNC</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model)
-{
-        <tr>
-            <td>@item.Nombre</td>
-            <td>@item.RncCedula</td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">✏️ Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">🔍 Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">🗑 Eliminar</a>
-            </td>
-        </tr>
-}
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Id</td>
+                <td>@c.Nombre</td>
+                <td>@c.RncCedula</td>
+                <td>@c.Direccion</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" href="/Contribuyentes/Edit/@c.Id"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-sm btn-danger" href="/Contribuyentes/Delete/@c.Id"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

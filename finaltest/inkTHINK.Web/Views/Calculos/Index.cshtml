@@ -28,8 +28,9 @@
                         var detalle = new Dictionary<string, decimal>();
                         if (!string.IsNullOrWhiteSpace(calc.DetalleImpuestosJson))
                         {
-                            detalle = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, decimal>>(calc.DetalleImpuestosJson)
-                                     ?? new Dictionary<string, decimal>();
+                            detalle = System.Text.Json.JsonSerializer
+                                        .Deserialize<Dictionary<string, decimal>>(calc.DetalleImpuestosJson)
+                                        ?? new Dictionary<string, decimal>();
                         }
                     }
                     <ul>
@@ -90,3 +91,15 @@
 
     <input type="submit" value="Calcular" class="btn btn-primary" />
 </form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger mt-3">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}

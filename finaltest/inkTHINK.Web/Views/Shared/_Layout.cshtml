@@ -1,58 +1,84 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - inkTHINK</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/inkTHINK.Web.styles.css" asp-append-version="true" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- FontAwesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="~/css/site.css" />
+    
+    <style>
+        /* Navbar links - color y negrita */
+        .navbar .nav-link {
+            color: #ffffff;       
+            transition: color 0.3s ease;  
+        }
+
+        /* Efecto hover */
+        .navbar .nav-link:hover {
+            color: #ffd700;       
+            text-decoration: underline;
+        }
+
+        /* Marca de la web */
+        .navbar-brand {
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">inkTHINK.Web</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contribuyentes" asp-action="Index">Contribuyentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="TaxRules" asp-action="Index">Reglas de Impuestos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Calculos" asp-action="Index">Cálculos</a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Navbar moderno -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">inkTHINK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="/Contribuyentes">Contribuyentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="/TaxRules">Reglas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="/Calculos">Cálculos</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container mt-4">
+        @RenderBody()
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - inkTHINK.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <!-- Footer simple -->
+    <footer class="bg-light text-center text-muted py-3 mt-4 border-top">
+        &copy; @DateTime.Now.Year inkTHINK - Todos los derechos reservados
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
