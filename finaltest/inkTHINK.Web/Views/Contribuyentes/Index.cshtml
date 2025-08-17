@@ -1,25 +1,35 @@
 @model IEnumerable<inkTHINK.Domain.Entities.Contribuyente>
 
-<h1>Contribuyentes</h1>
+@{
+    ViewData["Title"] = "Lista de Contribuyentes";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">➕ Nuevo Contribuyente</a>
+</p>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Id</th>
             <th>Nombre</th>
-            <th>RNC o Cédula</th>
-            <th>Tipo</th>
+            <th>RNC / Cédula</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var c in Model)
-        {
-            <tr>
-                <td>@c.Id</td>
-                <td>@c.Nombre</td>
-                <td>@c.RncCedula</td>
-                <td>@c.Tipo</td>
-            </tr>
-        }
+@foreach (var item in Model)
+{
+        <tr>
+            <td>@item.Nombre</td>
+            <td>@item.RncCedula</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">✏️ Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">🔍 Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">🗑 Eliminar</a>
+            </td>
+        </tr>
+}
     </tbody>
 </table>

@@ -1,0 +1,22 @@
+@model inkTHINK.Domain.Entities.Contribuyente
+
+@{
+    ViewData["Title"] = "Detalles del Contribuyente";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Contribuyente</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.Nombre</dd>
+
+        <dt class="col-sm-2">RNC / Cédula</dt>
+        <dd class="col-sm-10">@Model.RncCedula</dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">✏️ Editar</a>
+<a asp-action="Index" class="btn btn-secondary">⬅️ Volver</a>

@@ -1,0 +1,19 @@
+@model inkTHINK.Domain.Entities.TaxRule
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h2>¿Seguro que deseas eliminar esta regla?</h2>
+
+<div>
+    <h4>@Model.Nombre</h4>
+    <p>@Model.Descripcion</p>
+    <p><strong>@Model.Porcentaje %</strong></p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

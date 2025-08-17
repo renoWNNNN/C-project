@@ -1,0 +1,24 @@
+@model inkTHINK.Domain.Entities.Contribuyente
+
+@{
+    ViewData["Title"] = "Editar Contribuyente";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Nombre" class="control-label"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RncCedula" class="control-label"></label>
+        <input asp-for="RncCedula" class="form-control" />
+        <span asp-validation-for="RncCedula" class="text-danger"></span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">✔️ Guardar Cambios</button>
+    <a asp-action="Index" class="btn btn-secondary">⬅️ Volver</a>
+</form>

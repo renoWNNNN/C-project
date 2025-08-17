@@ -1,0 +1,61 @@
+@model inkTHINK.Domain.Entities.TaxRule
+
+@{
+    ViewData["Title"] = "Detalles de la Regla";
+}
+
+<h2>Detalles de la Regla</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Nombre</dt>
+        <dd class="col-sm-9">@Model.Nombre</dd>
+
+        <dt class="col-sm-3">Descripción</dt>
+        <dd class="col-sm-9">@Model.Descripcion</dd>
+
+        <dt class="col-sm-3">Porcentaje</dt>
+        <dd class="col-sm-9">@Model.Porcentaje %</dd>
+
+        <dt class="col-sm-3">Tipo</dt>
+        <dd class="col-sm-9">@Model.Tipo</dd>
+
+        <dt class="col-sm-3">Versión</dt>
+        <dd class="col-sm-9">@Model.Version</dd>
+
+        <dt class="col-sm-3">Parámetros</dt>
+        <dd class="col-sm-9">
+            @{
+                string parametros = string.Empty;
+                try
+                {
+                    var dict = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(Model.ParamsJson);
+                    if (dict != null && dict.Count > 0)
+                    {
+                        parametros = string.Join("<br/>", dict.Select(kv => $"{kv.Key}: {kv.Value}"));
+                    }
+                    else
+                    {
+                        parametros = "Sin parámetros";
+                    }
+                }
+                catch
+                {
+                    parametros = "JSON inválido";
+                }
+            }
+            @Html.Raw(parametros)
+        </dd>
+
+        <dt class="col-sm-3">Vigente Desde</dt>
+        <dd class="col-sm-9">@Model.VigenteDesde.ToShortDateString()</dd>
+
+        <dt class="col-sm-3">Vigente Hasta</dt>
+        <dd class="col-sm-9">@(@Model.VigenteHasta?.ToShortDateString() ?? "Indefinido")</dd>
+    </dl>
+</div>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a> |
+    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+</p>
