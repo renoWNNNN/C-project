@@ -1,8 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using inkTHINK.Infrastructure.Data;
-using inkTHINK.Domain.Entities;
-
 namespace inkTHINK.Web.Controllers
 {
     public class TaxRulesController : Controller

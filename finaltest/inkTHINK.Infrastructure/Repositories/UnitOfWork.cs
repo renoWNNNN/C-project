@@ -1,7 +1,3 @@
-using inkTHINK.Domain.Entities;
-using inkTHINK.Domain.Interfaces;
-using inkTHINK.Infrastructure.Data;
-
 namespace inkTHINK.Infrastructure.Repositories;
 
 public class UnitOfWork : IUnitOfWork

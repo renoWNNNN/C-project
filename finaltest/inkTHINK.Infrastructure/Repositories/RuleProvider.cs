@@ -1,7 +1,3 @@
-using inkTHINK.Domain.Interfaces;
-using inkTHINK.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
-
 namespace inkTHINK.Infrastructure.Repositories;
 
 public class RuleProvider : IRuleProvider

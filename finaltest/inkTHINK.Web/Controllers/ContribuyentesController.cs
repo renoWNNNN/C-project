@@ -1,8 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
-using inkTHINK.Domain.Entities;
-using inkTHINK.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
-
 namespace inkTHINK.Web.Controllers
 {
     public class ContribuyentesController : Controller

@@ -1,6 +1,3 @@
-using inkTHINK.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-
 namespace inkTHINK.Infrastructure.Data;
 
 public static class Seed

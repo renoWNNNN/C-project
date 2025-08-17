@@ -1,5 +1,3 @@
-using System.Text.Json.Serialization;
-
 namespace inkTHINK.Application.DTOs;
 
 public class CalculoResponseDto

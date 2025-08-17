@@ -1,7 +1,3 @@
-using inkTHINK.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-
 namespace inkTHINK.Infrastructure.Config;
 
 public static class DbConfig

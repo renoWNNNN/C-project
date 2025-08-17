@@ -1,9 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using inkTHINK.Infrastructure.Data;
-using inkTHINK.Domain.Entities;
-using System.Text.Json;
-
 namespace inkTHINK.Web.Controllers
 {
     public class CalculosController : Controller

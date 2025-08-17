@@ -1,9 +1,3 @@
-using inkTHINK.Application.Services;
-using inkTHINK.Domain.Interfaces;
-using inkTHINK.Infrastructure.Data;
-using inkTHINK.Infrastructure.Repositories;
-using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
 
 

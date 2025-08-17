@@ -1,5 +1,3 @@
-using inkTHINK.Domain.Entities;
-
 namespace inkTHINK.Domain.Interfaces;
 
 public interface IGenericRepository<T> where T : class

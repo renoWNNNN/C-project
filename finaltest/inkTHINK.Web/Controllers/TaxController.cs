@@ -1,6 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
-using inkTHINK.Web.Models;
-
 namespace inkTHINK.Web.Controllers
 {
     public class TaxController(ITaxService taxService) : Controller

@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using inkTHINK.Domain.Entities;
-
 namespace inkTHINK.Infrastructure.Data;
 
 public class AppDbContext : DbContext
