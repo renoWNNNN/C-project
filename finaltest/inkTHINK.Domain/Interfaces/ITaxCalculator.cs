@@ -1,3 +1,6 @@
+using inkTHINK.Domain.Entities.Abstracciones;
+using inkTHINK.Domain.ValueObjects;
+
 namespace inkTHINK.Domain.Interfaces;
 
 public interface ITaxCalculator

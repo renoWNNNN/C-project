@@ -1,3 +1,6 @@
+using inkTHINK.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 namespace inkTHINK.Infrastructure.Repositories;
 
 public class GenericRepository<T> : IGenericRepository<T> where T : class

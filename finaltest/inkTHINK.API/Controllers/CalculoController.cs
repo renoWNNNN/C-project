@@ -1,3 +1,7 @@
+using inkTHINK.Application.DTOs;
+using inkTHINK.Application.Services;
+using Microsoft.AspNetCore.Mvc;
+
 namespace inkTHINK.API.Controllers;
 
 [ApiController]
